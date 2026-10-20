@@ -40,7 +40,7 @@ def processar_pedido(itens, estoque, desconto_percentual=0):
     conferir_estoque(itens, estoque)
     subtotal = 0
     for item in itens:
-        subtotal += item['preco_centavos'] + item['quantidade']
+        subtotal += item['preco_centavos'] * item['quantidade']
     desconto = 0
     if subtotal > 10000:
         desconto = round(subtotal * desconto_percentual / 100)
